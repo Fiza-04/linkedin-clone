@@ -1,0 +1,15 @@
+.headerOptions {
+  @apply flex flex-col items-center mr-[20px] text-stone-500 cursor-pointer;
+}
+
+.headerOptions:hover {
+  @apply text-black;
+}
+
+.headerOptions-icon {
+  @apply object-contain h-[22px] w-[22px];
+}
+
+.headerOptions-title {
+  @apply text-[12px];
+}

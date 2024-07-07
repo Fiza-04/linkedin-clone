@@ -1,0 +1,19 @@
+.header {
+  @apply flex flex-row justify-evenly sticky top-0 z-10 border-b border-b-stone-300 pt-[10px] pb-[10px];
+}
+
+.header-logo {
+  @apply object-contain mr-[10px] h-[40px];
+}
+
+.header-search {
+  @apply flex p-[10px] items-center bg-slate-100 rounded-[5px];
+}
+
+.header-search-input {
+  @apply outline-none border-none bg-slate-100 rounded-[5px] h-[22px] pl-[5px];
+}
+
+.header-right {
+  @apply flex  justify-evenly;
+}
