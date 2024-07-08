@@ -1,5 +1,9 @@
 .sidebar {
-  @apply sticky flex-[20%] text-center h-fit;
+  position: sticky;
+  top: 80px;
+  flex: 0.2;
+  text-align: center;
+  height: fit-content;
 }
 
 .sidebar-top {
@@ -17,10 +21,6 @@
 .sidebar-top-img {
   @apply mb-[-25px] w-[100%] h-[60px] rounded-t-[10px];
 }
-
-/* .sidebar-stats {
-  @apply;
-} */
 
 .sidebar-stat {
   @apply mt-[7px] flex flex-row justify-between;

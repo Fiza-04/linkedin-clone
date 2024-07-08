@@ -1,0 +1,27 @@
+.post {
+  @apply bg-white p-[15px] mb-[10px] rounded-[10px];
+}
+
+.post-header {
+  @apply flex mb-[10px];
+}
+
+.post-info {
+  @apply ml-[10px];
+}
+
+.post-info > h2 {
+  @apply text-[20px] font-semibold;
+}
+
+.post-info > p {
+  @apply mt-[-5px] text-[13px] text-stone-400;
+}
+
+.post-body {
+  @apply text-wrap;
+}
+
+.post-buttons {
+  @apply flex justify-evenly;
+}

@@ -1,0 +1,28 @@
+.feed {
+  flex: 0.6;
+  margin: 0 20px;
+}
+
+.feed-input-container {
+  @apply bg-white p-[10px] pb-[20px] border border-white rounded-[10px] mb-[15px] w-[500px];
+}
+
+.feed-input {
+  @apply flex border border-stone-300 rounded-[30px] p-[10px] text-stone-500 pl-[15px];
+}
+
+.feed-input > form {
+  @apply flex w-[100%];
+}
+
+.feed-input > form > input {
+  @apply border-none flex-1 ml-[10px] outline-0 font-medium;
+}
+
+.feed-input > form > button {
+  @apply hidden;
+}
+
+.feed-input-options {
+  @apply flex justify-evenly;
+}

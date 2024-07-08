@@ -1,5 +1,5 @@
 .header {
-  @apply flex flex-row justify-evenly sticky top-0 z-10 border-b border-b-stone-300 pt-[10px] pb-[10px];
+  @apply flex flex-row justify-evenly sticky top-0 z-10 bg-white border-b border-b-stone-300 pt-[10px] pb-[10px] w-[100%];
 }
 
 .header-logo {

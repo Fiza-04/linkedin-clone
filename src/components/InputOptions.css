@@ -1,0 +1,7 @@
+.inputOptions {
+  @apply flex items-center mt-[10px] text-stone-500 p-[10px] pl-[20px] pr-[20px] cursor-pointer hover:bg-slate-100 rounded-[7px];
+}
+
+.inputOptions > h4 {
+  @apply ml-[7px] font-medium;
+}
