@@ -1,9 +1,15 @@
 import "./HeaderOptions.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 
-function Avatar({ src }) {
+function Avatar({ type }) {
   return (
     <div>
-      <img src={src} alt="me" className="avatar h-[40px] w-[40px]" />
+      {type === "header" ? (
+        <FontAwesomeIcon icon={faUser} className="header-avatar-icon" />
+      ) : (
+        <FontAwesomeIcon icon={faUser} className="avatar-icon" />
+      )}
     </div>
   );
 }

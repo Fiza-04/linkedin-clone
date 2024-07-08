@@ -1,0 +1,6 @@
+.app {
+  @apply bg-stone-100 flex flex-col items-center;
+}
+.app-body {
+  @apply flex;
+}

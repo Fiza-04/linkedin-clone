@@ -16,7 +16,7 @@ const Header = () => {
     <div className="header">
       <div className="header-left flex">
         <img
-          src="../assets/images/linkedin-logo.png"
+          src="/assets/images/linkedin-logo.png"
           alt="logo"
           className="header-logo"
         />
@@ -34,7 +34,7 @@ const Header = () => {
         <HeaderOptions Icon={faBriefcase} title="Jobs" />
         <HeaderOptions Icon={faMessage} title="Messaging" />
         <HeaderOptions Icon={faBell} title="Notifications" />
-        <HeaderOptions avatar="../assets/images/avatar.jpg" title="Me" />
+        <HeaderOptions title="Me" />
       </div>
     </div>
   );

@@ -10,6 +10,14 @@
   @apply object-contain h-[22px] w-[22px];
 }
 
+.header-avatar-icon {
+  @apply text-xl text-stone-500 hover:text-black;
+}
+
+.avatar-icon {
+  @apply bg-stone-400 text-white text-xl p-3 rounded-full mb-[10px];
+}
+
 .headerOptions-title {
   @apply text-[12px];
 }
