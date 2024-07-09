@@ -2,5 +2,5 @@
   @apply bg-stone-100 flex flex-col items-center;
 }
 .app-body {
-  @apply flex;
+  @apply flex mt-[30px] max-w-[1200px] ml-[20px] mr-[20px];
 }

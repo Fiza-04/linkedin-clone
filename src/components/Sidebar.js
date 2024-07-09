@@ -3,8 +3,12 @@ import "./Sidebar.css";
 import Avatar from "./Avatar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUsers } from "@fortawesome/free-solid-svg-icons";
+import { useSelector } from "react-redux";
+import { selectUser } from "../features/userSlice";
 
 function Sidebar() {
+  const user = useSelector(selectUser);
+
   const recentItems = (topic) => {
     return (
       <div className="sidebar-recentItems">
@@ -24,12 +28,12 @@ function Sidebar() {
           alt="bg-image"
           className="sidebar-top-img"
         />
-        <Avatar />
+        <Avatar src={user.photoUrl}>{user.displayName[0]}</Avatar>
         <h2>
-          <b>Fiza Joiya</b>
+          <b>{user.displayName}</b>
         </h2>
         <h4>
-          <b>fiza.fizajoiya28@gmail.com</b>
+          <b>{user.email}</b>
         </h4>
       </div>
 

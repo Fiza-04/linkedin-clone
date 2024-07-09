@@ -10,8 +10,18 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import HeaderOptions from "./HeaderOptions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useDispatch } from "react-redux";
+import { logout } from "../features/userSlice";
+import { auth } from "./Firebase";
 
 const Header = () => {
+  const dispatch = useDispatch();
+
+  const logoutOfApp = () => {
+    dispatch(logout());
+    auth.signOut();
+  };
+
   return (
     <div className="header">
       <div className="header-left flex">
@@ -25,7 +35,11 @@ const Header = () => {
             icon={faMagnifyingGlass}
             className="text-xl text-stone-500"
           />
-          <input type="text" className="header-search-input" />
+          <input
+            type="text"
+            placeholder="Search..."
+            className="header-search-input"
+          />
         </div>
       </div>
       <div className="header-right">
@@ -34,7 +48,7 @@ const Header = () => {
         <HeaderOptions Icon={faBriefcase} title="Jobs" />
         <HeaderOptions Icon={faMessage} title="Messaging" />
         <HeaderOptions Icon={faBell} title="Notifications" />
-        <HeaderOptions title="Me" />
+        <HeaderOptions title="Me" onClick={logoutOfApp} />
       </div>
     </div>
   );

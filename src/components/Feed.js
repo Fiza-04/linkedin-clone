@@ -9,34 +9,47 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 import Post from "./Post";
 import { useEffect, useState } from "react";
-import { db } from "./firebase.js";
-import firebase from "firebase";
+import { db } from "./Firebase.js";
+import {
+  collection,
+  addDoc,
+  onSnapshot,
+  serverTimestamp,
+  query,
+  orderBy,
+} from "firebase/firestore";
+import { useSelector } from "react-redux";
+import { selectUser } from "../features/userSlice.js";
+import FlipMove from "react-flip-move";
 
 function Feed() {
+  const user = useSelector(selectUser);
   const [input, setInput] = useState("");
-  const [post, setPost] = useState([]);
+  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    db.collection("posts").onSnapshot((snapshot) =>
-      setPost(
-        snapshot.docs.map((doc) => ({
-          id: doc.id,
-          data: doc.data(),
-        }))
-      )
+    const q = query(collection(db, "posts"), orderBy("timestamp", "desc")); // Correctly query the collection with ordering
+    const unsubscribe = onSnapshot(q, (snapshot) =>
+      setPosts(snapshot.docs.map((doc) => ({ id: doc.id, data: doc.data() })))
     );
+    return unsubscribe; // Unsubscribe from snapshot listener on unmount
   }, []);
 
-  const sendPost = (e) => {
+  const sendPost = async (e) => {
     e.preventDefault();
 
-    db.collection("posts").add({
-      name: "Fiza Joiya",
-      description: "This is a test",
-      message: input,
-      photoUrl: "",
-      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-    });
+    try {
+      await addDoc(collection(db, "posts"), {
+        name: user.displayName,
+        description: user.email,
+        message: input,
+        photoUrl: user.photoUrl || "",
+        timestamp: serverTimestamp(),
+      });
+      setInput("");
+    } catch (error) {
+      console.error("Error adding document: ", error);
+    }
   };
 
   return (
@@ -70,15 +83,17 @@ function Feed() {
           />
         </div>
       </div>
-      {post.map((post) => {
-        <Post />;
-      })}
-      <Post
-        name="Fiza Joiya"
-        description="This is a test"
-        message="WOW this worked"
-        photoUrl=""
-      />
+      <FlipMove>
+        {posts.map(({ id, data: { name, description, message, photoUrl } }) => (
+          <Post
+            key={id}
+            name={name}
+            description={description}
+            message={message}
+            photoUrl={photoUrl}
+          />
+        ))}
+      </FlipMove>
     </div>
   );
 }

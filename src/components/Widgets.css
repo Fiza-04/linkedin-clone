@@ -1,0 +1,39 @@
+.widgets {
+  position: sticky;
+  top: 80px;
+  width: 250px;
+  height: fit-content;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  height: fit-container;
+  padding-bottom: 10px;
+}
+
+.widgets-header {
+  @apply flex justify-between p-[10px] pt-[15px];
+}
+
+.widgets-header > h2 {
+  @apply text-[20px] font-semibold text-stone-800;
+}
+
+.widgets > p {
+  @apply pl-[15px] pb-[10px] text-[17px] font-medium text-stone-500;
+}
+
+.widgets-article {
+  @apply pl-[15px] pb-[15px] cursor-pointer hover:bg-slate-100;
+}
+
+.widgets-article > h4 {
+  @apply font-medium text-[15px] text-stone-900;
+}
+
+.widgets-article > p {
+  @apply text-[13px] text-stone-400;
+}
+
+.widgets-dot {
+  @apply text-[4px] pl-1 pr-1;
+}

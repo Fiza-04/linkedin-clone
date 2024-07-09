@@ -3,7 +3,7 @@
 }
 
 .post-header {
-  @apply flex mb-[10px];
+  @apply flex;
 }
 
 .post-info {
@@ -15,11 +15,11 @@
 }
 
 .post-info > p {
-  @apply mt-[-5px] text-[13px] text-stone-400;
+  @apply mt-[-5px] text-[14px] text-stone-400;
 }
 
 .post-body {
-  @apply text-wrap;
+  @apply text-wrap text-[17px] font-semibold text-stone-700;
 }
 
 .post-buttons {

@@ -1,0 +1,23 @@
+.login {
+  @apply grid place-items-center ml-auto mr-auto pt-[100px] pb-[100px];
+}
+
+.login-logo {
+  @apply object-contain h-[70px] mt-[20px] mb-[20px];
+}
+
+.login > form {
+  @apply flex flex-col;
+}
+
+.login > form > input {
+  @apply w-[350px] h-[50px] text-[20px] pl-[10px] mb-[10px] border border-stone-300 rounded-[5px];
+}
+
+.login > form > button {
+  @apply w-[350px] h-[50px] text-lg text-white bg-sky-700 rounded-[5px];
+}
+
+.login-register {
+  @apply text-sky-700 ml-[5px] cursor-pointer;
+}
